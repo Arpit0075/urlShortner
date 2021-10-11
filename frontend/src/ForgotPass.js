@@ -27,13 +27,15 @@ function ForgotPass() {
     setRes((prev) => ({ ...prev, [name]: value }));
   };
 
-  //handle submit email for the first part-- for submitting email
+  //handle submit email for the first part-- for submitting email forgotPass
   const handleSubmit1 = async (e) => {
     e.preventDefault();
 
-    const localUrl = "http://localhost:3001/login";
+    //const localUrl = "http://localhost:3001/forgotPass";
 
-    const response = await fetch(localUrl, {
+    const deployedUrl = "https://urlshortner-react.herokuapp.com/forgotPass";
+
+    const response = await fetch(deployedUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,9 +66,9 @@ function ForgotPass() {
     //console.log(res);
     e.preventDefault();
 
-    const localUrl = "http://localhost:3001/forgotPass";
+    const deployedUrl = "https://urlshortner-react.herokuapp.com/resetPass";
 
-    const response = await fetch(localUrl, {
+    const response = await fetch(deployedUrl, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

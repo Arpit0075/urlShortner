@@ -26,9 +26,9 @@ function Register() {
   const hanldeSubmit = async (e) => {
     e.preventDefault();
 
-    const localUrl = "http://localhost:3001/register";
+    const deployedUrl = "https://urlshortner-react.herokuapp.com/register";
 
-    const response = await fetch(localUrl, {
+    const response = await fetch(deployedUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,12 +50,13 @@ function Register() {
     localStorage.setItem("authToken", data.authToken);
   };
 
+  //post req to activate route
   const activateAccount = async (e) => {
     e.preventDefault();
 
-    const localUrl = "http://localhost:3001/activate";
+    const deployedUrl = "https://urlshortner-react.herokuapp.com/activate";
 
-    const response = await fetch(localUrl, {
+    const response = await fetch(deployedUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

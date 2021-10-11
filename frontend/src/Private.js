@@ -13,12 +13,14 @@ function Private() {
   //for clicks
   const [clicks, setClicks] = useState(0);
 
+  //get req to private route
   useEffect(() => {
     const getData = async () => {
       try {
-        const localUrl = "http://localhost:3001/private";
+        //const localUrl = "http://localhost:3001/private";
+        const deployedUrl = "https://urlshortner-react.herokuapp.com/private";
 
-        const res = await fetch(localUrl, {
+        const res = await fetch(deployedUrl, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -35,13 +37,15 @@ function Private() {
     getData();
   }, []);
 
+  //post req to private route
   const shortenUrl = async (e) => {
     e.preventDefault();
 
     try {
-      const localUrl = "http://localhost:3001/private";
+      //const localUrl = "http://localhost:3001/private";
+      const deployedUrl = "https://urlshortner-react.herokuapp.com/private";
 
-      const res = await fetch(localUrl, {
+      const res = await fetch(deployedUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -15,14 +15,13 @@ function Login() {
     setuserLogin((prev) => ({ ...prev, [name]: value }));
   };
 
+  //login
   const hanldeSubmit = async (e) => {
     e.preventDefault();
     try {
-      //const deployedUrl = "https://password-reset123.herokuapp.com/login";
+      const deployedUrl = "https://urlshortner-react.herokuapp.com/login";
 
-      const localUrl = "http://localhost:3001/login";
-
-      const response = await fetch(localUrl, {
+      const response = await fetch(deployedUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

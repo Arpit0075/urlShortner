@@ -1,9 +1,9 @@
-This is the projct for resetting password, this is the front end code for the project.
-We can register user, loggin to see private content and then reset password.
+This is the projct for displaying urlshortner information stored in database about particular user, this is the front end code for the project.
+We can register user, activate user and then loggin to see private content and also we can reset password.
 
 #deployed link
 Here is the deploed link:
 https://password-reset-frontend1.netlify.app/
 
 backend source code link:
-https://github.com/Arpit0075/Password-reset-backend
+"https://urlshortner-react.herokuapp.com/"
