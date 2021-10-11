@@ -3,7 +3,7 @@ We can register user, activate user and then loggin to see private content and a
 
 #deployed link
 Here is the deploed link:
-https://password-reset-frontend1.netlify.app/
+https://urlshortner-react1.netlify.app/
 
 backend source code link:
 "https://urlshortner-react.herokuapp.com/"
