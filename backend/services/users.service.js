@@ -36,7 +36,7 @@ const service = {
       await db.tempUsers.insertOne({ ...req.body, tempPassword });
 
       //send email to user
-      //mailer(req.body.email, tempPass);
+      mailer(req.body.email, tempPass);
 
       res.send({
         message:
@@ -131,7 +131,7 @@ const service = {
       });
 
       //send email to user
-      // mailer(user.email, tempPass);
+      mailer(user.email, tempPass);
 
       res.send({
         message: "email sent please fill the password within 15 minutes",
