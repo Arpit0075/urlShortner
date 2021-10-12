@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 function Login() {
   const history = useHistory();
+
   const [userLogin, setuserLogin] = useState({
     email: "",
     password: "",
@@ -14,6 +15,9 @@ function Login() {
     const { name, value } = e.target;
     setuserLogin((prev) => ({ ...prev, [name]: value }));
   };
+
+  //state for displaying error
+  const [error, setError] = useState("");
 
   //login
   const hanldeSubmit = async (e) => {
@@ -33,6 +37,12 @@ function Login() {
 
       // now do whatever you want with the data
       //console.log(data);
+      //displaying error for 3 secs
+      setError(data.error);
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+
       //if we get authToken in response then we store it in local storage and redirect user to private route
       if (data.authToken) {
         localStorage.setItem("authToken", data.authToken);
@@ -80,6 +90,7 @@ function Login() {
           Submit
         </button>
       </form>
+      <p>{error} </p>
       <Link to="/forgotPassword">
         <button className="btn btn-primary my-3">Forgot Password</button>
       </Link>
