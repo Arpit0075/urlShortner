@@ -17,7 +17,7 @@ function Private() {
   useEffect(() => {
     const getData = async () => {
       try {
-        //const localUrl = "http://localhost:3001/private";
+        // const localUrl = "http://localhost:3001/private";
         const deployedUrl = "https://urlshortner-react.herokuapp.com/private";
 
         const res = await fetch(deployedUrl, {

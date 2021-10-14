@@ -23,6 +23,7 @@ function Login() {
   const hanldeSubmit = async (e) => {
     e.preventDefault();
     try {
+      //const localUrl = "http://localhost:3001/login";
       const deployedUrl = "https://urlshortner-react.herokuapp.com/login";
 
       const response = await fetch(deployedUrl, {
@@ -36,7 +37,7 @@ function Login() {
       const data = await response.json();
 
       // now do whatever you want with the data
-      //console.log(data);
+      console.log(data);
       //displaying error for 3 secs
       setError(data.error);
       setTimeout(() => {

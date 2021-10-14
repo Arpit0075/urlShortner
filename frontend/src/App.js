@@ -11,12 +11,18 @@ import Register from "./Register";
 import ForgotPass from "./ForgotPass";
 import Private from "./Private";
 
-let isLogged = false;
-if (localStorage.getItem("authToken") !== null) {
-  isLogged = true;
+function ProtectedRoute({ component: Component, ...restOfProps }) {
+  const token = localStorage.getItem("authToken");
+
+  return (
+    <Route
+      {...restOfProps}
+      render={(props) =>
+        token ? <Component {...props} /> : <Redirect to="/" />
+      }
+    />
+  );
 }
-// console.log(localStorage.getItem("authToken"));
-// console.log(isLogged);
 
 function App() {
   return (
@@ -27,9 +33,8 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/forgotPassword" component={ForgotPass} />
-          <Route path="/private">
-            {isLogged ? <Private /> : <Redirect to="/" />}
-          </Route>
+
+          <ProtectedRoute path="/private" component={Private} />
         </Switch>
       </div>
     </Router>
