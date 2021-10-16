@@ -1,4 +1,7 @@
-This is the backend API for registering user, login and then resetting password for the user, displaying data stored in database about urlShortner
+This is the backend API for registering user, login and then resetting password for the user, displaying data stored in database about urlShortner.
+Here is the sample user for login:
+email: ankit@gmail.com
+password: 1234
 
 These are the end points-
 
